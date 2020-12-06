@@ -1,0 +1,24 @@
+<% include ("layout/cabecalho") %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <h1 style="margin-bottom: 50px;">Criar novo contato</h1>
+    <form action="/contatos/novo" method="POST">
+        <input type="hidden" name="id" value="<%= contacts == null ? " " : id %>">
+        <div class="form-group">
+            <label for="exampleInputPassword1">Nome:</label>
+            <input required type="text" name="nome" class="form-control" id="exampleInputPassword1" placeholder="Informe nome" value="<%= contacts == null ? " " : contacts[id].nome %>">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">E-mail:</label>
+            <input required type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%= contacts == null ? " " : contacts[id].email %>">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputTelefone1">Telefone:</label>
+            <input required type="phone" name="telefone" class="form-control" id="exampleInputTelefone1" placeholder="Informe Telefone" value="<%= contacts == null ? " " : contacts[id].telefone %>">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputCPF1">CPF:</label>
+            <input required type="text" name="cpf" class="form-control" id="exampleInputCPF1" placeholder="Informe CPF" value="<%= contacts == null ? " " : contacts[id].cpf %>">
+        </div>
+        <button type="submit" class="btn btn-primary" value="OK">Enviar</button>
+    </form>
+    <% include ("layout/rodape") %>
